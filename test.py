@@ -1,4 +1,4 @@
-from Add_Digits import *
+from Reverse_Integer import *
 
 s = Solution()
-print(s.addDigits(38))
+print(s.reverse(38))
