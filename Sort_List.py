@@ -11,7 +11,6 @@ class Solution(object):
             temp = temp.next
         vals.sort()
         temp2=head
-        temp2=head
         for count in range(len(vals)):
             temp2.val = vals[count]
             temp2 = temp2.next
