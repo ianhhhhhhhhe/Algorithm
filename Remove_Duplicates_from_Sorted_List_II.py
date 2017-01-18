@@ -1,4 +1,4 @@
-# Definition for singly-linked list.
+## Definition for singly-linked list.
 # class ListNode(object):
 #     def __init__(self, x):
 #         self.val = x
@@ -10,12 +10,15 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        if head == None:
-            return head
-        temp = head
-        while temp.next:
-            if temp.val == temp.next.val:
-                temp.next = temp.next.next
+        res = pre = self
+        res.next = head
+        while head and head.next:
+            if head.val == head.next.val:
+                while head and head.next and head.val == head.next.val:
+                    head = head.next
+                head = head.next
+                pre.next = head
             else:
-                temp = temp.next
-        return head
+                pre = pre.next
+                head = head.next
+        return res.next
